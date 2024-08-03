@@ -1,1 +1,89 @@
-<p>footer works!</p>
+@if(footer$ |async;as footer){
+<footer class="footer">
+  <div class="container py-5">
+    <img
+      class="mb-3"
+      src="../../../../assets/images/logo.png"
+      alt="tahalof logo"
+    />
+    <div class="row">
+      <div class="col-md-4 contact-details">
+        <ul class="contact-details-list p-0">
+          <li>
+            <a
+              ><img
+                class="pe-2"
+                src="../../../../assets/images/Icon_material-location-on.svg"
+              />{{ footer.location }}</a
+            >
+          </li>
+          <li>
+            <a
+              ><img
+                class="pe-2"
+                src="../../../../assets/images/Icon_feather-phone.svg"
+              />{{ footer.phone_number }}</a
+            >
+          </li>
+          <li>
+            <a
+              ><img
+                class="pe-2"
+                src="../../../../assets/images/noun-mail-1810388.svg"
+              />
+              {{ footer.email }}
+            </a>
+          </li>
+        </ul>
+        <div class="social">
+          <div>
+            <i class="fa-brands fs-3 me-3 fa-linkedin" style="color: #fff"></i>
+            <i
+              class="fa-brands fs-3 fa-square-facebook"
+              style="color: #fff"
+            ></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <ul>
+          <li>
+            <a href="{{ footer.tab2_link }}">{{ footer.tab2_name }}</a>
+          </li>
+          <li>
+            <a href="{{ footer.tab3_link }}">{{ footer.tab3_name }}</a>
+          </li>
+          <li>
+            <a href="{{ footer.tab4_link }}">{{ footer.tab4_name }}</a>
+          </li>
+          <li>
+            <a href="{{ footer.faq_page_link }}">FAQ</a>
+          </li>
+          <li>
+            <a href="{{ footer.privacy_and_policy_page_link }}"
+              >Privacy Policy</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 d-flex flex-column justify-content-evenly">
+        <a href="{{ footer.tab5_link }}">{{ footer.tab5_name }}</a>
+        <div>
+          <span class="d-block mb-2 text-white">{{
+            footer.subscribe_title
+          }}</span>
+          <div class="subscribe-input">
+            <input type="text" placeholder="example@gmail.com" />
+            <app-button
+              class="custom-button"
+              [backgroundColor]="'#034773'"
+              [textColor]="'white'"
+              >{{ footer.subscribe_button }}</app-button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+}
