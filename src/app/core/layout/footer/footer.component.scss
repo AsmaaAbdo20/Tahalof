@@ -1,6 +1,7 @@
 .footer {
   background-color: var(--primary);
   height: 60vh;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); /* Apply the box-shadow */
   a {
     text-decoration: none;
     color: var(--secondary-text);

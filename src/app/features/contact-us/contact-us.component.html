@@ -1,1 +1,126 @@
-<p>contact-us works!</p>
+@if(contactUs$ |async; as contact){
+<div class="contact-us">
+  <div class="_container">
+    <div class="row g-0">
+      <div class="contact-form col-xl-6 col-sm-12">
+        <tahalof-navigation class="navigator">Contact Us</tahalof-navigation>
+        <form (submit)="onSubmit()" [formGroup]="form">
+          <div class="row justify-content-evenly">
+            <div class="col-md-6">
+              <input
+                class="form-control"
+                type="text"
+                formControlName="name"
+                id="name"
+                #name
+              />
+
+              <label for="name">Name</label>
+              @if (form.controls?.['name']?.touched){
+              <div class="err-msg text-danger mb-2">
+                @if (form.controls?.['name']?.errors?.['required']) {<span
+                  >Name is Required</span
+                >}
+              </div>
+              }
+
+              <input
+                class="form-control"
+                type="phone"
+                formControlName="phone"
+                id="phone"
+                #phone
+              />
+              <label for="phone">Phone</label>
+              @if (form.controls?.['phone']?.touched){
+              <div class="err-msg text-danger mb-2">
+                @if (form.controls?.['phone']?.errors?.['required']) {<span
+                  >phone is Required </span
+                >} @if (form.controls?.['phone']?.errors?.['pattern']) {<span
+                  >must start with +20</span
+                >}
+              </div>
+              }
+              <input
+                class="form-control"
+                type="text"
+                formControlName="message"
+                id="message"
+              />
+              <label for="message">Message</label>
+              @if (form.controls?.['message']?.touched){
+              <div class="err-msg text-danger mb-2">
+                @if (form.controls?.['message']?.errors?.['required'])
+                {<span>Required</span>}
+              </div>
+              }
+            </div>
+            <div class="col-md-6">
+              <input
+                class="form-control"
+                type="email"
+                formControlName="email"
+                id="email"
+                #email
+              />
+              <label for="email">E-mail</label>
+              @if (form.controls?.['email']?.touched){
+              <div class="err-msg text-danger mb-2">
+                @if (form.controls?.['email']?.errors?.['required'])
+                {<span>Required</span>} @if
+                (form.controls?.['email']?.errors?.['email'])
+                {<span>(example&#64;gmail.com)</span>}
+              </div>
+              }
+              <input
+                class="form-control"
+                formControlName="subject"
+                type="text"
+                id="subject"
+              />
+              <label for="subject">Subject</label>
+              @if (form.controls?.['subject']?.touched){
+              <div class="err-msg text-danger mb-2">
+                @if (form.controls?.['subject']?.errors?.['required'])
+                {<span>Required</span>}
+              </div>
+              }
+            </div>
+          </div>
+          <app-button class="col-12 col-lg-auto mt-5" type="submit"
+            >Apply</app-button
+          >
+        </form>
+      </div>
+      <div class="contact-image col-xl-6 col-sm-12">
+        <div class="main-image">
+          <img class="w-100" [src]="getImage(contact.main_image)" />
+        </div>
+        <div class="layer d-flex">
+          <div class="image-context">
+            <h3>{{ contact.title }}</h3>
+            <p class="mb-5">{{ contact.sub_title }}</p>
+            <div>
+              <p>
+                <span class="pe-3"
+                  ><img [src]="getImage(contact.location_svg)" /></span
+                >{{ contact.location }}
+              </p>
+              <p>
+                <span class="pe-3"
+                  ><img [src]="getImage(contact.call_svg)" /></span
+                >{{ contact.call }}
+              </p>
+              <p>
+                <span class="pe-3"
+                  ><img [src]="getImage(contact.mail_svg)" alt="" /></span
+                >{{ contact.mail }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

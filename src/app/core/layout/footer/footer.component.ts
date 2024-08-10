@@ -4,7 +4,7 @@ import { HttpService } from '../../services/http/http.service';
 import { Observable } from 'rxjs';
 import { FooterGetResponse } from './models/FooterGetResponse';
 import { EndPoints } from '../../constants/endpoints';
-import { ButtonComponent } from "../../../shared/components/button/button.component";
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-footer',
