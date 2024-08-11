@@ -3,8 +3,7 @@
 .navbar {
   background-color: var(--primary);
   height: 15vh;
-  width: 100%;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--dark-box-shadow);
   .navbar-collapse {
     flex-grow: 0;
   }

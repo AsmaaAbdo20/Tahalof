@@ -1,0 +1,43 @@
+.job-details {
+  .details {
+    h3 {
+      padding: 1.125rem 0rem;
+      margin-bottom: 0.5625rem;
+      font-size: 1.75rem;
+      color: var(--main);
+    }
+    p {
+      margin-bottom: 1.125rem;
+      font-size: 1.125rem;
+    }
+  }
+  .form {
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+    }
+    margin: 5rem auto !important;
+    background-color: #e5ecf1;
+    width: 90% !important;
+    h2 {
+      padding-bottom: 2.25rem;
+      margin-bottom: 0.5625rem;
+      color: var(--main);
+      font-size: 1.375rem;
+    }
+    label {
+      margin-bottom: 0.5625rem;
+      font-size: 1.125rem;
+    }
+    input {
+      padding: 0.625rem 1.125rem;
+    }
+    ::ng-deep app-button {
+      // width: 100% !important;
+      padding: 1.25rem;
+      button {
+        padding: 8px 50px;
+      }
+    }
+  }
+}

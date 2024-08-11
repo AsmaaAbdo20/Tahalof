@@ -4,7 +4,12 @@
     <div class="row g-0">
       <div class="contact-form col-xl-6 col-sm-12">
         <tahalof-navigation class="navigator">Contact Us</tahalof-navigation>
-        <form (submit)="onSubmit()" [formGroup]="form">
+        <form
+          (submit)="onSubmit()"
+          [formGroup]="form"
+          #cvForm="ngForm"
+          enctype="multipart/form-data"
+        >
           <div class="row justify-content-evenly">
             <div class="col-md-6">
               <input
@@ -16,9 +21,9 @@
               />
 
               <label for="name">Name</label>
-              @if (form.controls?.['name']?.touched){
+              @if (form.controls['name'].touched){
               <div class="err-msg text-danger mb-2">
-                @if (form.controls?.['name']?.errors?.['required']) {<span
+                @if (form.controls['name'].errors?.['required']) {<span
                   >Name is Required</span
                 >}
               </div>
@@ -32,11 +37,11 @@
                 #phone
               />
               <label for="phone">Phone</label>
-              @if (form.controls?.['phone']?.touched){
+              @if (form.controls['phone'].touched){
               <div class="err-msg text-danger mb-2">
-                @if (form.controls?.['phone']?.errors?.['required']) {<span
+                @if (form.controls['phone'].errors?.['required']) {<span
                   >phone is Required </span
-                >} @if (form.controls?.['phone']?.errors?.['pattern']) {<span
+                >} @if (form.controls['phone'].errors?.['pattern']) {<span
                   >must start with +20</span
                 >}
               </div>
@@ -48,9 +53,9 @@
                 id="message"
               />
               <label for="message">Message</label>
-              @if (form.controls?.['message']?.touched){
+              @if (form.controls['message'].touched){
               <div class="err-msg text-danger mb-2">
-                @if (form.controls?.['message']?.errors?.['required'])
+                @if (form.controls['message'].errors?.['required'])
                 {<span>Required</span>}
               </div>
               }
@@ -64,11 +69,11 @@
                 #email
               />
               <label for="email">E-mail</label>
-              @if (form.controls?.['email']?.touched){
+              @if (form.controls['email'].touched){
               <div class="err-msg text-danger mb-2">
-                @if (form.controls?.['email']?.errors?.['required'])
+                @if (form.controls['email'].errors?.['required'])
                 {<span>Required</span>} @if
-                (form.controls?.['email']?.errors?.['email'])
+                (form.controls['email'].errors?.['email'])
                 {<span>(example&#64;gmail.com)</span>}
               </div>
               }
@@ -79,9 +84,9 @@
                 id="subject"
               />
               <label for="subject">Subject</label>
-              @if (form.controls?.['subject']?.touched){
+              @if (form.controls['subject'].touched){
               <div class="err-msg text-danger mb-2">
-                @if (form.controls?.['subject']?.errors?.['required'])
+                @if (form.controls['subject'].errors?.['required'])
                 {<span>Required</span>}
               </div>
               }

@@ -7,10 +7,11 @@ import { ContactusGetResponse } from './models/contactusGetResponse';
 import { EndPoints } from '../../core/constants/endpoints';
 import { CommonModule } from '@angular/common';
 import { BaseComponent } from '../../shared/components/base/base.component';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { environment } from '../../environments/environment';
-// import { HttpClient } from '@angular/common/http';
+import { CustomValidatorsService } from '../../core/services/custom-validators/custom-validators.service';
+import { formsModule } from '../../shared/components/base/form-modules';
 
 @Component({
   selector: 'app-contact-us',
@@ -18,7 +19,7 @@ import { environment } from '../../environments/environment';
   imports: [
     ButtonComponent,
     RouterLink,
-    ReactiveFormsModule,
+    ...formsModule,
     NavigationComponent,
     CommonModule,
   ],
@@ -32,9 +33,9 @@ export class ContactUsComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {
     this.contactUs$ = this.http.get<ContactusGetResponse>(EndPoints.CONTACTUS);
     this.loadForm({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required, CustomValidatorsService.isAlphabet]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^\+20\d{10}$/)]],
+      phone: ['', [Validators.required, CustomValidatorsService.isPhone]],
       message: ['', [Validators.required]],
       subject: ['', [Validators.required]],
     });

@@ -1,11 +1,26 @@
 <nav class="py-md-5">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a routerLink="/home">Home</a>
+      <a routerLink="/home">{{ nav1 }}</a>
     </li>
     <span class="mx-3">/</span>
-    <li class="breadcrumb-item active text-white" aria-current="page">
-      <ng-content></ng-content>
+    @if (nav3 !='') {
+    <li class="breadcrumb-item active" aria-current="page">{{ nav2 }}</li>
+    <li
+      class="breadcrumb-item active"
+      [style.color]="textColor"
+      aria-current="page"
+    >
+      {{ nav3 }}
     </li>
+    } @else {
+    <li
+      class="breadcrumb-item active"
+      aria-current="page"
+      [style.color]="textColor"
+    >
+      {{ nav2 }}
+    </li>
+    }
   </ol>
 </nav>

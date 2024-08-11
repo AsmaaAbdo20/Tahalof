@@ -8,4 +8,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
 })
-export class NavigationComponent {}
+export class NavigationComponent {
+  @Input() textColor: string = 'white' || '#034773';
+  @Input() nav1: string = 'Home';
+  @Input() nav2!: string;
+  @Input() nav3: string = '';
+}

@@ -1,1 +1,32 @@
-<p>careers works!</p>
+@if(career$|async;as career){
+<section class="careers">
+  <div class="_container my-5">
+    <tahalof-navigation [textColor]="'#034773'" nav2="careers"></tahalof-navigation>
+    <div class="row g-4">
+      @for ( res of career.results; track $index) {
+      <div class="col-md-6">
+        <div class="item text-center">
+          <h3>{{ res.job_title }}</h3>
+
+          <p>{{ res.job_description.slice(0, 30) }}...</p>
+          <a
+            [routerLink]="[res.id]"
+            class="nav-link contact-us-btn"
+            aria-current="page"
+            routerLinkActive="active"
+          >
+            <app-button
+              role="button"
+              [backgroundColor]="'#034773'"
+              [textColor]="'white'"
+              aria-current="page"
+              >Apply</app-button
+            >
+          </a>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+}

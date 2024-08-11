@@ -1,0 +1,58 @@
+.careers {
+  .item {
+    position: relative;
+    box-shadow: var(--light-box-shadow);
+    padding: 1rem 3.75rem;
+    overflow: hidden;
+
+    h3 {
+      padding-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--main);
+      font-size: 1.5625rem;
+    }
+    p {
+      padding: 1rem 0px;
+      margin-bottom: 1rem;
+    }
+    ::after {
+      content: "";
+      position: absolute;
+      background-color: #03467346;
+      opacity: 0.1;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      transition: all 0.8s ease;
+    }
+    &:hover {
+      ::after {
+        top: 0%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 90% !important;
+    background: red;
+  }
+  .item {
+    padding: 0.6875rem 2.75rem !important;
+    h3 {
+      padding-top: 0.6875rem !important;
+      margin-bottom: 0.3125rem !important;
+      font-size: 1.125rem !important;
+    }
+    p {
+      padding: 0.6875rem 0rem !important;
+      margin-bottom: 0.6875rem !important;
+    }
+  }
+  ::ng-deep app-button button {
+    width: 100% !important;
+  }
+}
+
