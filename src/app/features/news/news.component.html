@@ -1,1 +1,50 @@
-<p>news works!</p>
+@if (news$|async; as news) {
+<div class="news">
+  <div class="_container pb-5">
+    <tahalof-navigation
+      [textColor]="'#034773'"
+      [nav2]="'News'"
+    ></tahalof-navigation>
+    <div class="filter">
+      <ul class="d-flex list-unstyled">
+        <li class="pe-5 all-news">All News</li>
+        @for ( item of news.years; track $index) {
+        <li class="pe-5">{{ item }}</li>
+        }
+      </ul>
+    </div>
+    <div class="row g-5 items">
+      @for (item of news.news.results; track $index) {
+      <div class="col-xl-6">
+        <div class="row item">
+          <div class="image-holder col-6">
+            <tahalof-image [imgSrc]="item.main_image"></tahalof-image>
+          </div>
+          <div
+            class="item-context col-6 p-3 row flex-column justify-content-around"
+          >
+            <div class="d-flex align-items-center">
+              <tahalof-image [imgSrc]="item.news_svg"></tahalof-image>
+              <span class="ms-2">{{ item.created_at }}</span>
+            </div>
+            <span class="main-title">{{ item.main_title }}</span>
+            <h5 class="description">
+              {{ item.main_description.slice(0, 30) }}...
+            </h5>
+            <a
+              [routerLink]="[item.id]"
+              aria-current="page"
+              routerLinkActive="active"
+            >
+              <app-button [backgroundColor]="'#034773'" [textColor]="'white'"
+                >Read More</app-button
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+}

@@ -18,6 +18,7 @@ export const routes: Routes = [
     component: FacilitiesComponent,
   },
   { path: 'news', component: NewsComponent },
+  // { path: 'news/:id', component: NewsDetailsComponent },
   { path: 'careers', component: CareersComponent },
   { path: 'careers/:jobId', component: JobDescriptionComponent },
   { path: 'contact-us', component: ContactUsComponent },
