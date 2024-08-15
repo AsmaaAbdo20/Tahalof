@@ -33,11 +33,16 @@
             </h5>
             <a
               [routerLink]="[item.id]"
+              class="nav-link contact-us-btn"
               aria-current="page"
               routerLinkActive="active"
             >
-              <app-button [backgroundColor]="'#034773'" [textColor]="'white'"
-                >Read More</app-button
+              <app-button
+                role="button"
+                [backgroundColor]="'#034773'"
+                [textColor]="'white'"
+                aria-current="page"
+                >Apply</app-button
               >
             </a>
           </div>

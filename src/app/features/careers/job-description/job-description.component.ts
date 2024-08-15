@@ -24,11 +24,11 @@ export class JobDescriptionComponent extends BaseComponent implements OnInit {
   careerDetails$!: Observable<CareerDetailsGetResponse>;
   currJobId: string | null = null;
   selectedFile: File | null = null;
-  // formGroupDirective: any;
 
   constructor(private activatedRoute: ActivatedRoute) {
     super();
     this.currJobId = this.activatedRoute.snapshot.paramMap.get('jobId');
+    
   }
 
   ngOnInit(): void {

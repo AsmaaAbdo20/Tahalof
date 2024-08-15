@@ -1,0 +1,17 @@
+.newsDetails{
+    .lrDescribtion{
+        background-color:#03467315;
+    }
+    
+}
+
+@media (max-width: 74.9375rem) {
+    .newsDetails {
+      ._container {
+          .middle-image {
+            height: 30vh !important;
+          }
+        }
+      }
+    }
+  

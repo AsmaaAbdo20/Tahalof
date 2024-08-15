@@ -1,0 +1,30 @@
+@if (newsDetails$|async;as details) {
+<section class="newsDetails">
+  <div class="_container">
+    <tahalof-navigation
+      [nav2]="'News'"
+      [nav3]="details.main_title"
+      [textColor]="'#034773'"
+    ></tahalof-navigation>
+    <div class="row align-items-center">
+      <div class="image-holder col-md-4 p-0">
+        <tahalof-image [imgSrc]="details.main_image"></tahalof-image>
+      </div>
+      <div class="col-md-8">
+        <p>{{ details.main_description }}</p>
+      </div>
+    </div>
+    <div class="row align-items-center lrDescribtion my-5 py-4">
+      <div class="col-xl-4">
+        <p>{{ details.left_description }}</p>
+      </div>
+      <div class="col-xl-4 middle-image ">
+        <tahalof-image [imgSrc]="details.middle_image"></tahalof-image>
+      </div>
+      <div class="col-xl-4">
+        <p>{{ details.right_description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+}

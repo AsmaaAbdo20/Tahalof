@@ -7,6 +7,7 @@ import { NewsComponent } from './features/news/news.component';
 import { CareersComponent } from './features/careers/careers.component';
 import { ContactUsComponent } from './features/contact-us/contact-us.component';
 import { JobDescriptionComponent } from './features/careers/job-description/job-description.component';
+import { NewsDetailsComponent } from './features/news/news-details/news-details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +19,7 @@ export const routes: Routes = [
     component: FacilitiesComponent,
   },
   { path: 'news', component: NewsComponent },
-  // { path: 'news/:id', component: NewsDetailsComponent },
+  { path: 'news/:id', component: NewsDetailsComponent },
   { path: 'careers', component: CareersComponent },
   { path: 'careers/:jobId', component: JobDescriptionComponent },
   { path: 'contact-us', component: ContactUsComponent },

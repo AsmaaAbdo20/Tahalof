@@ -23,7 +23,4 @@ export class CareersComponent implements OnInit {
     this.career$ = this.httpService.get<CareerGetResponse>(EndPoints.CAREER);
   }
 
-  // getJobDetails(jobId: string) {
-  //   return this.career$.subscribe(res=>res.results);
-  // }
 }

@@ -7,7 +7,7 @@ import { EndPoints } from '../../core/constants/endpoints';
 import { CommonModule } from '@angular/common';
 import { ImageComponent } from '../../shared/components/image/image.component';
 import { ButtonComponent } from '../../shared/components/button/button.component';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-news',
@@ -28,5 +28,8 @@ export class NewsComponent implements OnInit {
   news$!: Observable<NewsGetResponse>;
   ngOnInit(): void {
     this.news$ = this.http.get<NewsGetResponse>(EndPoints.NEWS);
+  }
+  log(id: string) {
+    console.log(id);
   }
 }
