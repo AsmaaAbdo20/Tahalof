@@ -14,10 +14,8 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'services', component: ServicesComponent },
-  {
-    path: 'facilities',
-    component: FacilitiesComponent,
-  },
+  { path: 'hospital', component: FacilitiesComponent },
+  // { path: 'hospital/:uuid:', component: FacilitiesDetailsComponent },
   { path: 'news', component: NewsComponent },
   { path: 'news/:id', component: NewsDetailsComponent },
   { path: 'careers', component: CareersComponent },

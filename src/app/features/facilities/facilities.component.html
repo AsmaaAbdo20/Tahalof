@@ -1,1 +1,29 @@
-<p>facilities works!</p>
+@if (facilities$|async;as hospital) {
+<div class="hospital">
+  <div class="_container">
+    <tahalof-navigation
+      [nav2]="'Facilities'"
+      [textColor]="'#034773'"
+    ></tahalof-navigation>
+    <h1 class="main-title">{{ hospital.main_title }}</h1>
+    <div class="row justify-content-center">
+      @for (hospital of hospital.hospitals.results; track $index) {
+      <div class="col-xl-4 col-md-6 mb-5">
+        <div class="image-holder" [routerLink]="hospital.uuid">
+          <tahalof-image
+            class="image"
+            [imgSrc]="hospital.image"
+          ></tahalof-image>
+          <div class="image-layer">
+            <tahalof-image [imgSrc]="hospital.hospital_logo"></tahalof-image>
+          </div>
+          <div class="date">
+            <span>{{ hospital.built_year }}</span>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+}
