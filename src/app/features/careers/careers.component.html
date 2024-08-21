@@ -1,7 +1,11 @@
 @if(career$|async;as career){
 <section class="careers">
   <div class="_container my-5">
-    <tahalof-navigation [textColor]="'#034773'" nav2="careers"></tahalof-navigation>
+    <tahalof-navigation
+      [textColor]="'#034773'"
+      nav2="Careers"
+      navUrl="/careers"
+    ></tahalof-navigation>
     <div class="row g-4">
       @for ( res of career.results; track $index) {
       <div class="col-md-6">

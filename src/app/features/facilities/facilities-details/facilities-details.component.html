@@ -1,0 +1,134 @@
+@if (hospitalDetails$|async;as details) {
+<div class="hospital-details">
+  <div class="header">
+    <div class="image-holder">
+      <tahalof-image [imgSrc]="details.image"></tahalof-image>
+    </div>
+    <tahalof-navigation
+      [backGroundColor]="'white'"
+      [nav2]="'Facilities'"
+      nav3="{{ details.name }}"
+      [textColor]="'#034773'"
+      [navUrl]="'/hospital'"
+    ></tahalof-navigation>
+    <h3 class="main-title _containe0 d-flex align-items-center ms-5">
+      {{ details.name }}
+    </h3>
+  </div>
+  <div class="contacts bg-white d-flex align-content-end">
+    <div class="_container">
+      <div class="pattern py-4 w-75 m-auto">
+        <div class="row w-75 text-center m-auto flex-nowrap">
+          @for (item of details.info; track $index) {
+          <div class="col pattern_text">
+            <tahalof-image [imgSrc]="item.svg"></tahalof-image>
+            <div>
+              <span class="number">{{ item.number }}</span>
+            </div>
+            <div>
+              <span class="text">{{ item.text }}</span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="contacts_details">
+        <h3>
+          {{ details.country_title }}:<span>{{ details.country }}</span>
+        </h3>
+        <h3>
+          {{ details.contact_title }}:
+          <span class="svg"
+            ><tahalof-image [imgSrc]="details.contact_svg1"></tahalof-image
+          ></span>
+          <span>
+            {{ details.contact_number1 }}
+          </span>
+          <span class="svg"
+            ><tahalof-image [imgSrc]="details.contact_svg2"></tahalof-image>
+            {{ details.contact_number2 }}</span
+          >
+        </h3>
+        <h3>
+          {{ details.branch_title }}:<span>{{ details.branch }}</span>
+        </h3>
+        <h3>
+          {{ details.country_title }}
+          <span class="svg"
+            ><tahalof-image [imgSrc]="details.location_svg"></tahalof-image
+          ></span>
+          <span>{{ details.location }}</span>
+        </h3>
+      </div>
+      <div class="descriptions">
+        <div class="row">
+          <div class="description row p-0">
+            <div
+              class="col-md-6 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div class="w-75">
+                <h3 class="sub-title">
+                  {{ details.description_title }}
+                </h3>
+                <p class="_parag">{{ details.description1 }}</p>
+              </div>
+            </div>
+            <div class="col-md-6 p-0">
+              <div class="image-1">
+                <tahalof-image
+                  [imgSrc]="details.description_img1"
+                ></tahalof-image>
+              </div>
+            </div>
+          </div>
+          <div class="description row p-0">
+            <div class="col-md-6 p-0">
+              <div class="image-1">
+                <tahalof-image
+                  [imgSrc]="details.description_img2"
+                ></tahalof-image>
+              </div>
+            </div>
+            <div
+              class="col-md-6 d-flex flex-column justify-content-center align-items-center"
+            >
+              <div class="w-75">
+                <p class="_parag">{{ details.description2 }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="mb-5 sub-title">
+        {{ details.media_title }}
+      </h3>
+    </div>
+  </div>
+
+  <div class="swiper-section">
+    <swiper-container
+      class="swiper m-auto"
+      slides-per-view="1.5"
+      space-between="30"
+      navigation="true"
+      loop="true"
+      autoplay="true"
+      speed="500"
+    >
+      @for (item of details.media; track $index) {
+      <swiper-slide class="carousel__slide" loop="true">
+        <div class="carousel__img">
+          <tahalof-image [imgSrc]="item.image"></tahalof-image>
+        </div>
+        <div class="carousel__caption w-100">
+          <p
+            class="w-75 m-auto my-4 fs-md-18 fs-16 text-center text-white fw-bold"
+          >
+            {{ item.description }}
+          </p>
+        </div> </swiper-slide
+      >}
+    </swiper-container>
+  </div>
+</div>
+}

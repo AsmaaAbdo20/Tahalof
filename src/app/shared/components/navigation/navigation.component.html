@@ -1,26 +1,23 @@
-<nav class="py-md-5">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a routerLink="/home">{{ nav1 }}</a>
-    </li>
-    <span class="mx-3">/</span>
-    @if (nav3 !='') {
-    <li class="breadcrumb-item active" aria-current="page">{{ nav2 }}</li>
-    <li
-      class="breadcrumb-item active"
-      [style.color]="textColor"
-      aria-current="page"
-    >
-      {{ nav3 }}
-    </li>
-    } @else {
-    <li
-      class="breadcrumb-item active"
-      aria-current="page"
-      [style.color]="textColor"
-    >
-      {{ nav2 }}
-    </li>
-    }
-  </ol>
+<nav class="py-md-5" [style.background-color]="backGroundColor">
+  <div class="_container">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item">
+        <a routerLink="/home">{{ nav1 }}</a>
+      </li>
+      <span class="mx-3">/</span>
+      @if (nav3 == "") {
+      <li aria-current="page">
+        <a [style.color]="textColor">{{ nav2 }}</a>
+      </li>
+      } @else if (nav3 !=""){
+      <li aria-current="page" [style.color]="'gray'">
+        <a [routerLink]="navUrl">{{ nav2}}</a>
+      </li>
+      <span class="mx-3">/</span>
+      <li aria-current="page">
+        <a [style.color]="textColor">{{ nav3 }}</a>
+      </li>
+      }
+    </ol>
+  </div>
 </nav>

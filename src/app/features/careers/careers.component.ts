@@ -22,5 +22,4 @@ export class CareersComponent implements OnInit {
   ngOnInit(): void {
     this.career$ = this.httpService.get<CareerGetResponse>(EndPoints.CAREER);
   }
-
 }

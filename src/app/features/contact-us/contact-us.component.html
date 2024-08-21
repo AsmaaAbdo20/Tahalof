@@ -3,7 +3,10 @@
   <div class="_container">
     <div class="row g-0">
       <div class="contact-form col-xl-6 col-sm-12">
-        <tahalof-navigation class="navigator">Contact Us</tahalof-navigation>
+        <tahalof-navigation
+          class="navigator"
+          [nav2]="'Contact Us'"
+        ></tahalof-navigation>
         <form
           (submit)="onSubmit()"
           [formGroup]="form"

@@ -10,7 +10,10 @@ import { RouterLink } from '@angular/router';
 })
 export class NavigationComponent {
   @Input() textColor: string = 'white' || '#034773';
+  @Input() backGroundColor: string = '';
   @Input() nav1: string = 'Home';
-  @Input() nav2!: string;
+  @Input() nav2: string = '';
   @Input() nav3: string = '';
+  @Input() navUrl!: string;
+  
 }

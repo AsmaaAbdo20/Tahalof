@@ -2,6 +2,7 @@
 <section class="newsDetails">
   <div class="_container">
     <tahalof-navigation
+      [navUrl]="'/news'"
       [nav2]="'News'"
       [nav3]="details.main_title"
       [textColor]="'#034773'"
@@ -18,7 +19,7 @@
       <div class="col-xl-4">
         <p>{{ details.left_description }}</p>
       </div>
-      <div class="col-xl-4 middle-image ">
+      <div class="col-xl-4 middle-image">
         <tahalof-image [imgSrc]="details.middle_image"></tahalof-image>
       </div>
       <div class="col-xl-4">
