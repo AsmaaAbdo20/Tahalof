@@ -1,1 +1,57 @@
-<p>services works!</p>
+@if (services$|async;as service) {
+<div class="services">
+  <tahalof-navigation
+    [nav2]="'Services'"
+    [backGroundColor]="'white'"
+    [textColor]="'#034773'"
+  >
+  </tahalof-navigation>
+  <div class="_container">
+    <h3 class="title">
+      {{ service.main_title }}
+    </h3>
+    <p class="desc w-50">
+      {{ service.main_description }}
+    </p>
+    <div class="service__details">
+      <div class="holder w-75 m-auto">
+        <div class="row gx-4 justify-content-center">
+          @for (item of service.services.results; track $index) {
+          <div class="_item col-xl-4 col-md-6">
+            <div class="item-card">
+              <tahalof-image
+                class="main-img"
+                [imgSrc]="item.main_image"
+              ></tahalof-image>
+              <div class="p-3 item-context">
+                <tahalof-image class="svg" [imgSrc]="item.svg"></tahalof-image>
+                <span>{{ item.name }}</span>
+                <p>{{ item.description.slice(0, 30) }}...</p>
+              </div>
+              <div class="p-3">
+                <a routerLink="'/id'" routerLinkActive="active"
+                  >Service details</a
+                >
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="contact my-5">
+        <h3 class="title">
+          {{ service.contact_title }}
+        </h3>
+        <h4 class="desc">
+          {{ service.contact_description }}
+        </h4>
+        <app-button [textColor]="'white'" [backgroundColor]="'#034773'">
+          <a class="text-decoration-none text-white" routerLink="/contact-us"
+            >Contact us</a
+          ></app-button
+        >
+      </div>
+    </div>
+  </div>
+</div>
+}

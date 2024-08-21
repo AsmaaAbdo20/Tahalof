@@ -1,0 +1,67 @@
+.services {
+  .title {
+    color: var(--main-text);
+    font-size: 2.1875rem;
+    margin-bottom: 0.5rem;
+  }
+  .desc {
+    padding: 1rem 0px;
+    font-size: 1rem !important;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  .service__details {
+    ._item {
+      padding: 0px 0.75rem;
+      .item-card {
+        box-shadow: var(--light-box-shadow) !important;
+        margin-bottom: 2rem;
+        ::ng-deep tahalof-image {
+          &.svg img {
+            width: 30px !important;
+            padding-right: 0.3125rem;
+          }
+        }
+        .item-context {
+          .svg {
+            margin-bottom: 0.5rem;
+          }
+          span {
+            color: var(--main-text);
+            font-size: 0.875rem;
+          }
+          p {
+            margin-bottom: 1rem;
+          }
+        }
+        a {
+          color: var(--main-text) !important;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .contact {
+    width: 35%;
+  }
+}
+
+@media (max-width: 87.4375rem) {
+  .service__details {
+    .holder {
+      width: 100% !important;
+    }
+  }
+}
+@media (max-width: 74.9375rem) {
+  .services {
+    font-size: 0.75rem;
+  }
+
+  .desc {
+    width: 100% !important;
+  }
+  .contact {
+    width: 100% !important;
+  }
+}
