@@ -9,12 +9,14 @@ import { ContactUsComponent } from './features/contact-us/contact-us.component';
 import { JobDescriptionComponent } from './features/careers/job-description/job-description.component';
 import { NewsDetailsComponent } from './features/news/news-details/news-details.component';
 import { FacilitiesDetailsComponent } from './features/facilities/facilities-details/facilities-details.component';
+import { ServiceDetailsComponent } from './features/services/service-details/service-details.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'services', component: ServicesComponent },
+  { path: 'services/:id', component: ServiceDetailsComponent },
   { path: 'hospital', component: FacilitiesComponent },
   { path: 'hospital/:uuid', component: FacilitiesDetailsComponent },
   { path: 'news', component: NewsComponent },

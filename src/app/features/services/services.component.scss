@@ -14,12 +14,22 @@
     ._item {
       padding: 0px 0.75rem;
       .item-card {
+        border-radius: 2% !important ;
+        overflow: hidden;
         box-shadow: var(--light-box-shadow) !important;
         margin-bottom: 2rem;
+        transition: all 0.5s ease;
+        .main-img {
+          overflow: hidden;
+          ::ng-deep tahalof-image img {
+            transition: all 0.5s ease;
+          }
+        }
         ::ng-deep tahalof-image {
           &.svg img {
             width: 30px !important;
             padding-right: 0.3125rem;
+            transition: all 0.5s ease;
           }
         }
         .item-context {
@@ -37,6 +47,12 @@
         a {
           color: var(--main-text) !important;
           text-decoration: underline;
+        }
+        &:hover {
+          background-color: var(--light-background);
+          ::ng-deep tahalof-image img {
+            transform: scale(1.1) !important;
+          }
         }
       }
     }

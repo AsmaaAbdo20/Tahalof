@@ -19,17 +19,16 @@
           @for (item of service.services.results; track $index) {
           <div class="_item col-xl-4 col-md-6">
             <div class="item-card">
-              <tahalof-image
-                class="main-img"
-                [imgSrc]="item.main_image"
-              ></tahalof-image>
+              <div class="main-img">
+                <tahalof-image [imgSrc]="item.main_image"></tahalof-image>
+              </div>
               <div class="p-3 item-context">
                 <tahalof-image class="svg" [imgSrc]="item.svg"></tahalof-image>
                 <span>{{ item.name }}</span>
                 <p>{{ item.description.slice(0, 30) }}...</p>
               </div>
               <div class="p-3">
-                <a routerLink="'/id'" routerLinkActive="active"
+                <a routerLink="{{ item.uuid }}" routerLinkActive="active"
                   >Service details</a
                 >
               </div>

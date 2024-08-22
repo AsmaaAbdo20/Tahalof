@@ -1,0 +1,88 @@
+@if (serviceDetails$|async; as serviceDetails) {
+<div class="serviceDetails">
+  <tahalof-navigation
+    [nav2]="'Services'"
+    [nav3]="serviceDetails.name"
+    [backGroundColor]="'white'"
+    [textColor]="'#034773'"
+  ></tahalof-navigation>
+  <div class="header d-flex align-items-center">
+    <tahalof-image [imgSrc]="serviceDetails.main_image"></tahalof-image>
+    <h3 class="sub-title ms-5">{{ serviceDetails.name }}</h3>
+  </div>
+  <div class="bg-white section2">
+    <div class="_container">
+      <div class="overview pt-5">
+        <h3 class="title pb-4">
+          {{ serviceDetails.overview }}
+        </h3>
+        <p class="w-75">{{ serviceDetails.description }}</p>
+      </div>
+      <div class="healthcare">
+        <div class="row">
+          <div class="col-xl-4 top-left">
+            <tahalof-image
+              [imgSrc]="serviceDetails.service_details_top_left_image"
+            ></tahalof-image>
+          </div>
+          <div class="col-xl-4 description">
+            <h3 class="sub-title">
+              {{ serviceDetails.we_do_title }}
+            </h3>
+            <p>{{ serviceDetails.service_details_top_middle_description }}</p>
+          </div>
+          <div class="col-xl-4">
+            <tahalof-image
+              [imgSrc]="
+                serviceDetails.service_details_top_right_description_image
+              "
+            ></tahalof-image>
+          </div>
+          <div class="col-xl-4 description">
+            <p>{{ serviceDetails.service_details_bottom_left_description }}</p>
+          </div>
+          <div class="col-xl-4">
+            <tahalof-image
+              [imgSrc]="serviceDetails.service_details_bottom_middle_image"
+            ></tahalof-image>
+          </div>
+          <div class="col-xl-4 description">
+            <p>{{ serviceDetails.service_details_bottom_right_description }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="investment">
+        <h3 class="title mb-4">{{ serviceDetails.case_title }}</h3>
+        <div class="row g-4">
+          @for (item of serviceDetails.case_studies; track $index) {
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="item">
+              <div class="img">
+                <tahalof-image [imgSrc]="item.image"></tahalof-image>
+              </div>
+              <div class="context">
+                <h3 class="title">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="contact mt-5">
+        <h3 class="title">
+          {{ serviceDetails.contact.contact_title }}
+        </h3>
+        <h4 class="desc">
+          {{ serviceDetails.contact.contact_description }}
+        </h4>
+        <app-button [textColor]="'white'" [backgroundColor]="'#034773'">
+          <a class="text-decoration-none text-white" routerLink="/contact-us"
+            >Contact us</a
+          ></app-button
+        >
+      </div>
+    </div>
+  </div>
+</div>
+}
