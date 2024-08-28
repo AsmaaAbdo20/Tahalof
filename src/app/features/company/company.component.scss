@@ -1,0 +1,286 @@
+.ourCompany {
+  .sub-title {
+    color: var(--main-text);
+    font-size: 1.75rem;
+    padding-bottom: 1.5625rem;
+  }
+
+  .header {
+    position: relative;
+    box-sizing: border-box;
+    background-color: var(--light-background);
+    &__context {
+      z-index: 99;
+      padding-left: 5rem;
+      .main-title {
+        font-size: 1.875rem;
+        color: var(--main-text);
+        font-weight: bold;
+      }
+    }
+    p {
+      font-size: 1.125rem;
+      width: 80%;
+    }
+
+    .pattern {
+      position: absolute;
+      height: 30% !important;
+      bottom: 0rem;
+      left: 0;
+      right: 0;
+      background-image: url("../../../assets/images/pattern.svg");
+      opacity: 0.1;
+    }
+  }
+  .facilities-steps {
+    margin: 4.375rem auto;
+    .small-title {
+      font-size: 1.125rem;
+      color: var(--main-text);
+      span {
+        font-size: 5.625rem;
+        font-weight: bold;
+      }
+    }
+    .decreption-1 {
+      font-size: 16px;
+    }
+    .sub-title {
+      width: 25%;
+    }
+    p {
+      margin-top: 10%;
+    }
+    ::ng-deep tahalof-image img {
+      width: 95%;
+    }
+    .svg {
+      width: 4.375rem;
+    }
+    .section-3 {
+      p {
+        margin-top: 2%;
+      }
+    }
+  }
+  .our-achievements {
+    position: relative;
+    color: white;
+    height: 55vh;
+    .background {
+      height: 100%;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      opacity: 0.5;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-color: black;
+    }
+    .context {
+      padding: 3% 0rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99;
+      .main-title {
+        font-size: 1.563rem;
+        font-weight: bold;
+      }
+      .sub-title {
+        font-size: 1.125rem;
+      }
+      .items {
+        width: calc(100% / 3);
+        height: 45%;
+        .item {
+          padding: 10% 0px;
+          background-color: rgba(255, 255, 255, 0.479);
+          .icon {
+            ::ng-deep tahalof-image img {
+              width: 70px;
+              padding-top: 25%;
+            }
+          }
+          .number {
+            font-size: 2rem;
+            font-weight: bold;
+          }
+          .title {
+            font-size: 0.9375rem;
+          }
+        }
+      }
+    }
+  }
+  .our-vision {
+    margin: 4.375rem;
+    .description {
+      background-color: var(--light-background);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 4%;
+      h2 {
+        font-size: 1.5625rem;
+        color: var(--main-text);
+        margin-bottom: 2.25rem;
+      }
+      p {
+        width: 90%;
+        font-size: 1.125rem;
+        position: relative;
+      }
+      &.dep2 {
+        p {
+          &::after {
+            position: absolute;
+            content: "•";
+            left: -1.5625rem;
+            top: -0.5rem;
+            font-size: 1.875rem;
+            color: var(--main-text);
+          }
+        }
+      }
+    }
+  }
+  .our-values {
+    margin: 70px auto;
+    .items {
+      .item {
+        background-color: var(--light-background);
+        padding: 2.25rem;
+        margin-top: 2.25rem;
+        height: 100%;
+        .title {
+          margin-bottom: 2.25rem;
+          h3 {
+            color: var(--main-text) !important;
+            margin-left: 35px;
+          }
+        }
+        .svg {
+          ::ng-deep tahalof-image img {
+            width: 4.375rem !important;
+          }
+        }
+        p {
+          padding-left: 4.375rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 74.9375rem) {
+  .sub-title {
+    font-size: 1.25rem !important;
+    font-weight: bolder;
+  }
+  p {
+    font-size: 0.875rem !important;
+  }
+  .header {
+    .main-title {
+      font-size: 1.875rem !important;
+    }
+  }
+  .our-achievements {
+    .items {
+      .item {
+        .number {
+          font-size: 1rem !important;
+        }
+        .title {
+          font-size: 0.75rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 62rem) {
+  .header {
+    &__context {
+      margin-bottom: 3.125rem;
+    }
+  }
+  .pattern {
+    display: none;
+  }
+  .facilities-steps {
+    .sub-title {
+      width: 50% !important;
+      font-size: 1.125rem;
+    }
+    ::ng-deep tahalof-image img {
+      width: 100% !important;
+    }
+    .section-1 {
+      .small-title {
+        font-size: 0.75rem;
+        span {
+          font-size: 3.75rem !important;
+        }
+      }
+      .decreption-1 {
+        font-size: 0.625rem !important;
+      }
+    }
+    .section-2 {
+      margin-bottom: 20px;
+    }
+    .section-3 {
+      p {
+        margin-top: 0.125rem !important;
+      }
+    }
+  }
+  .our-achievements {
+    .items {
+      width: 100% !important;
+      .item {
+        padding: 10% 0px !important;
+
+        .number {
+          font-size: 1rem;
+        }
+        .title {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1724px) {
+  .our-values {
+    .items {
+      .item {
+        .title {
+          margin-bottom: 0.25rem !important;
+        }
+        height: fit-content !important;
+        .svg {
+          width: 50px !important;
+        }
+        h3 {
+          font-size: 0.875rem !important;
+        }
+        p {
+          font-size: 0.75rem !important;
+        }
+      }
+    }
+  }
+}

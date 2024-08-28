@@ -14,7 +14,7 @@ import { ServiceDetailsComponent } from './features/services/service-details/ser
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'company', component: CompanyComponent },
+  { path: 'about-us', component: CompanyComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'services/:id', component: ServiceDetailsComponent },
   { path: 'hospital', component: FacilitiesComponent },

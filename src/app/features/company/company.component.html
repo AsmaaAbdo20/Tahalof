@@ -1,1 +1,158 @@
-<p>company works!</p>
+@if (companies$|async;as companies) {
+<div class="ourCompany">
+  <tahalof-navigation
+    [nav2]="'Our Company'"
+    [textColor]="'#034773'"
+  ></tahalof-navigation>
+
+  <div class="header">
+    <div class="row gx-5 m-0 d-flex">
+      <div
+        class="col-lg-6 d-flex order-2 order-lg-1 justify-content-center align-items-center"
+      >
+        <div class="header__context">
+          <h3 class="main-title">{{ companies.main_title1 }}</h3>
+          <h4 class="sub-title">{{ companies.sub_title1 }}</h4>
+          <p>{{ companies.description1 }}</p>
+          <app-button [backgroundColor]="'#034773'" textColor="'white'"
+            ><a class="text-white text-decoration-none" routerLink="/contact-us"
+              >Contact Us</a
+            ></app-button
+          >
+        </div>
+      </div>
+      <div class="col-lg-6 order-1 pe-0 ps-sm-0">
+        <div class="header__image">
+          <div class="img">
+            <tahalof-image [imgSrc]="companies.main_image1"></tahalof-image>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pattern"></div>
+  </div>
+  <div class="facilities-steps">
+    <div class="_container">
+      <h5 class="small-title">{{ companies.main_header2 }}</h5>
+      <h3 class="sub-title">{{ companies.main_title2 }}</h3>
+      <div class="row justify-content-start d-flex m-xl-0 gx-5">
+        <div
+          class="col-lg-4 col-4 section-1 p-xl-0 order-2 order-xl-1 d-flex flex-column justify-content-end"
+        >
+          <h3 class="small-title">
+            <span>{{ companies.experience_years2 }} </span> <br />{{
+              companies.experience_title2
+            }}
+          </h3>
+          <p class="decreption-1">{{ companies.left_description2 }}</p>
+        </div>
+        <div class="col-lg-4 section-2 order-1 order-xl-2">
+          <tahalof-image [imgSrc]="companies.image2"></tahalof-image>
+        </div>
+        <div
+          class="col-lg-4 col-8 section-3 order-3 p-xl-0 d-flex flex-column justify-content-center"
+        >
+          <div class="svg">
+            <tahalof-image [imgSrc]="companies.right_svg2"></tahalof-image>
+          </div>
+          <p class="small-title">{{ companies.right_title2 }}</p>
+          <p>{{ companies.right_description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="our-achievements">
+    <div
+      class="background"
+      [ngStyle]="{
+        'background-image':
+          'url(' +
+          ['http://staging.freaksrepublic.com:8066'] +
+          companies.main_background3 +
+          ')'
+      }"
+    ></div>
+    <div class="context">
+      <div class="_container h-100 d-flex flex-column justify-content-end">
+        <div>
+          <h3 class="main-title">{{ companies.main_title3 }}</h3>
+          <h4 class="sub-title text-white">{{ companies.sub_title3 }}</h4>
+        </div>
+        <div class="items m-auto row justify-content-center">
+          @for (item of companies.achievements; track $index) {
+          <div class="col-6">
+            <div class="item h-100 d-flex flex-column align-items-center">
+              <div class="icon">
+                <tahalof-image [imgSrc]="item.svg"></tahalof-image>
+              </div>
+              <span class="number">{{ item.number }} </span>
+              <span class="title">{{ item.title }} </span>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="our-history">
+    <div class="_container">
+      <h3>
+        {{ companies.main_title4 }}
+      </h3>
+
+      <mat-tab-group>
+        <mat-tab label="First">
+          <img src="../../../assets/images/pattern.svg" alt="" />
+        </mat-tab>
+        <mat-tab label="Second"> Content 2 </mat-tab>
+        <mat-tab label="Third"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div> -->
+  <div class="our-vision">
+    <div class="_container">
+      <div class="row g-0">
+        <div class="col-lg-6 description">
+          <h2>{{ companies.vision_title }}</h2>
+          <p>{{ companies.vision_description }}</p>
+        </div>
+        <div class="col-lg-6">
+          <tahalof-image [imgSrc]="companies.vision_image"></tahalof-image>
+        </div>
+
+        <div class="col-lg-6">
+          <tahalof-image [imgSrc]="companies.mission_image"></tahalof-image>
+        </div>
+        <div class="col-lg-6 description dep2">
+          <h2>{{ companies.mission_title }}</h2>
+          <p>{{ companies.mission_descriptions[0].description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="our-values">
+    <div class="_container">
+      <h3 class="sub-title">{{ companies.main_title6 }}</h3>
+      <div class="_container">
+        <div class="items">
+          <div class="row g-4">
+            @for (item of companies.values; track $index) {
+            <div class="col-lg-6 col-md-12">
+              <div class="item">
+                <div class="title d-flex align-items-center">
+                  <div class="svg">
+                    <tahalof-image [imgSrc]="item.svg"></tahalof-image>
+                  </div>
+                  <h3>{{ item.title }}</h3>
+                </div>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}
